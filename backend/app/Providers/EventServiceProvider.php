@@ -9,16 +9,6 @@ use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
-    /**
-     * The event listener mappings for the application.
-     *
-     * @var array
-     */
-    protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
-        ],
-    ];
 
     /**
      * Register any events for your application.
@@ -27,6 +17,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \App::bindMethod( LikedJob::class. '@handle', fn($job) => $job->handle() );
     }
 }

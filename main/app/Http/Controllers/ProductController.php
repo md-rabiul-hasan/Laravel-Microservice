@@ -23,6 +23,10 @@ class ProductController extends Controller
                 "user_id" => $user_id
             ]);
 
+            $product = Product::find($id);
+            $product->likes++;
+            $product->save();
+
             LikedJob::dispatch($product_like->toArray())->onQueue('backend_queue');
 
             return response([

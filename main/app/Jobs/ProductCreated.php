@@ -37,6 +37,7 @@ class ProductCreated implements ShouldQueue
             "id"         => $this->data['id'],
             "title"      => $this->data['title'],
             "image"      => $this->data['image'],
+            "likes"      => $this->data['likes'],
             "created_at" => $this->data['created_at'],
             "updated_at" => $this->data['updated_at']
         ]);

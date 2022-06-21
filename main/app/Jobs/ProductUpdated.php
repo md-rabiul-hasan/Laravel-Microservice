@@ -38,6 +38,7 @@ class ProductUpdated implements ShouldQueue
         $product->update([
             "title"      => $this->data['title'],
             "image"      => $this->data['image'],
+            "likes"      => $this->data['likes'],
             "created_at" => $this->data['created_at'],
             "updated_at" => $this->data['updated_at']
         ]);
